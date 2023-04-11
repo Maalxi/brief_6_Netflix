@@ -1,6 +1,6 @@
 ### Lancement du projet
 
-> Utilisation de Live-Server
+Utilisation de Live-Server
 
 Télécharger l'extention Live Server
 > https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer

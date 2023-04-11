@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/netflix-icon.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="./css/home-user.css">
-    <link rel="stylesheet" href="./css/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/index.css">
 
     <title>Netflix-clone</title>
 </head>
@@ -16,20 +14,19 @@
 <body>
     <header>
         <img src="./assets/img/logo.png">
-
         <nav>
-            <ul class="menu-nav">
-                <li><a href="">Séries</a></li>
-                <li><a href="">Film</a></li>
-                <li><a href="">Ma liste</a></li>
-                <li><a href="">Regarder à nouveau</a></li>
-            </ul>
-        </nav>
-
+            <nav>
+                <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false"
+                    aria-controls="menu">
+                <ul id="menu">
+                    <li><a href="#!">Séries</a></li>
+                    <li><a href="#!">Film</a></li>
+                    <li><a href="#!">Ma liste</a></li>
+                    <li><a href="#!">Regarder à nouveau</a></li>
+                </ul>
+            </nav>
         <ul class="menu-icons">
-            <li><img src="./assets/img/lupa.png" class="icons"></li>
-            <li><a href="">ENFANTS</a></li>
-            <li><img src="./assets/img/presente.png" class="icons"></li>
+            <input type="text" name="text" class="search" placeholder="Recherchez ici !" />
             <li><img src="./assets/img/sino.png" class="icons"></li>
             <li><img src="./assets/img/perfil01.png" class="icons"></li>
         </ul>
@@ -43,7 +40,7 @@
                 <p>La Saga freezer est le deuxième arc principal de l'anime Dragon Ball Z.
                     L'intrigue principale est le combat tant attendu entre Goku et Freezer.</p>
             </div>
-            
+
             <div class="buttons">
                 <button class="btn play">
                     <i class="fas fa-play"></i>
@@ -66,7 +63,7 @@
             </div>
 
             <div class="container-movies">
-                <h2>Les plus vues</h2>
+                <h2>Anime</h2>
                 <div class="owl-carousel owl-theme" id="emAlta"></div>
             </div>
 
@@ -76,7 +73,7 @@
             </div>
 
             <div class="container-movies">
-                <h2>Anime</h2>
+                <h2>Les films les plus chaud de ta région</h2>
                 <div class="owl-carousel owl-theme" id="original"></div>
             </div>
         </div>
@@ -111,4 +108,5 @@
     <script src="./js/owl/owl.carousel.min.js"></script>
     <script src="./js/home.js"></script>
 </body>
+
 </html>

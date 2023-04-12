@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
     <link rel="shortcut icon" href="./assets/img/netflix-icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
 
@@ -15,16 +17,14 @@
     <header>
         <img src="./assets/img/logo.png">
         <nav>
-            <nav>
-                <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false"
-                    aria-controls="menu">
-                <ul id="menu">
-                    <li><a href="#!">Séries</a></li>
-                    <li><a href="#!">Film</a></li>
-                    <li><a href="#!">Ma liste</a></li>
-                    <li><a href="#!">Regarder à nouveau</a></li>
-                </ul>
-            </nav>
+            <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+            <ul id="menu">
+                <li><a href="#!">Séries</a></li>
+                <li><a href="#!">Film</a></li>
+                <li><a href="#!">Ma liste</a></li>
+                <li><a href="#!">Regarder à nouveau</a></li>
+            </ul>
+        </nav>
         <ul class="menu-icons">
             <input type="text" name="text" class="search" placeholder="Recherchez ici !" />
             <li><img src="./assets/img/sino.png" class="icons"></li>
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container_header">
             <div class="movie-main">
                 <img src="./assets/img/dbz.png" alt="">
                 <p>La Saga freezer est le deuxième arc principal de l'anime Dragon Ball Z.
@@ -54,30 +54,28 @@
             </div>
         </div>
     </main>
-
-    <section>
-        <div class="carousel-movies">
-            <div class="container-movies">
-                <h2>Continuez à regarder</h2>
-                <div class="owl-carousel owl-theme" id="continue"></div>
+    <section class="section">
+        <div class="container">
+            <h2>Les plus populaires</h2>
+            <div id="carousel-demo" class="carousel is-clipped popular">
             </div>
-
-            <div class="container-movies">
-                <h2>Anime</h2>
-                <div class="owl-carousel owl-theme" id="emAlta"></div>
-            </div>
-
-            <div class="container-movies">
-                <h2>Action</h2>
-                <div class="owl-carousel owl-theme" id="pqAssistiu"></div>
-            </div>
-
-            <div class="container-movies">
-                <h2>Les films les plus chaud de ta région</h2>
-                <div class="owl-carousel owl-theme" id="original"></div>
+        </div>
+        <div class="container">
+            <h2>Serie</h2>
+            <div id="carousel-demo" class="carousel is-clipped serie">
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
 
     <footer>
         <div class="container-footer">
@@ -89,7 +87,7 @@
 
             </div>
 
-            <ul class="listas">
+            <ul class="list">
                 <li>Langue et sous-titres</li>
                 <li>Audiodescription</li>
                 <li>Conditions d'utilisation</li>
@@ -103,10 +101,10 @@
 
 
 
+    <script src="/js/style.js" type="module"></script>
+    <script src="/js/carousel.js" type="module"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-    <script src="./js/owl/jquery.min.js"></script>
-    <script src="./js/owl/owl.carousel.min.js"></script>
-    <script src="./js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 </body>
 
 </html>

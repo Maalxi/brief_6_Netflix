@@ -1,0 +1,118 @@
+"https://api.themoviedb.org/3/movie/126963?api_key=976af520506561d0a0dbf74dc2e792bc&language=fr-FR"
+
+
+{
+  "adult": false,
+  "backdrop_path": "/yIDS5QLvKtgzfu43eUWx5JkGW6p.jpg",
+  "belongs_to_collection": {
+    "id": 620873,
+    "name": "Dragon Ball Super - Saga",
+    "poster_path": "/38fLvtJHsU9iH7NQ2YQIMZuWIm8.jpg",
+    "backdrop_path": "/b0v9EM3fFA3t5uJ9uonPcHHbxMW.jpg"
+  },
+  "budget": 0,
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 878,
+      "name": "Science-Fiction"
+    }
+  ],
+  "homepage": "",
+  "id": 126963,
+  "imdb_id": "tt2263944",
+  "original_language": "ja",
+  "original_title": "ドラゴンボールZ 神と神",
+  "overview": "Quelques années après la disparition de Boo, Beerus, le dieu de la destruction, se réveille après 39 ans d'hibernation. Quelques années auparavant, le Poisson Oracle lui avait prédit qu'un puissant guerrier se dresserait contre lui dans exactement 39 ans. Ayant eu echo de la mort de Freezer, Beerus décide alors de partir à la recherche de son bourreau, Son Goku, dans l'espoir de tomber sur le fameux guerrier de la prophétie du Poisson Oracle.",
+  "popularity": 81.687,
+  "poster_path": "/v6HhePWmQDKL75ys4hsbPQuIrYn.jpg",
+  "production_companies": [
+    {
+      "id": 145850,
+      "logo_path": null,
+      "name": "Bandai Namco Games",
+      "origin_country": "JP"
+    },
+    {
+      "id": 5542,
+      "logo_path": "/ayE4LIqoAWotavo7xdvYngwqGML.png",
+      "name": "Toei Animation",
+      "origin_country": "JP"
+    },
+    {
+      "id": 3341,
+      "logo_path": "/dTG5dXE1kU2mpmL9BNnraffckLU.png",
+      "name": "Fuji Television Network",
+      "origin_country": "JP"
+    },
+    {
+      "id": 2918,
+      "logo_path": "/gyEWUBWwqrm3H5T2hkERD9LxpOq.png",
+      "name": "Shueisha",
+      "origin_country": "JP"
+    },
+    {
+      "id": 7485,
+      "logo_path": "/vpOrqLxZ6JkrCFdi3ZUWhHKmDEM.png",
+      "name": "Fox International Productions",
+      "origin_country": "US"
+    },
+    {
+      "id": 5822,
+      "logo_path": "/qyTbRgCyU9NLKvKaiQVbadtr7RY.png",
+      "name": "Toei Company",
+      "origin_country": "JP"
+    },
+    {
+      "id": 528,
+      "logo_path": "/fO3Aof3lXQclYpBByYC8aneTXwA.png",
+      "name": "Bandai Visual",
+      "origin_country": "JP"
+    },
+    {
+      "id": 25,
+      "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+      "name": "20th Century Fox",
+      "origin_country": "US"
+    },
+    {
+      "id": 11749,
+      "logo_path": "/5AzTeZkSCFhiGZ86g2nz8SAHtgy.png",
+      "name": "20th Century Fox Animation",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "JP",
+      "name": "Japan"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2013-03-30",
+  "revenue": 50461371,
+  "runtime": 121,
+  "spoken_languages": [
+    {
+      "english_name": "Japanese",
+      "iso_639_1": "ja",
+      "name": "日本語"
+    }
+  ],
+  "status": "Released",
+  "tagline": "",
+  "title": "Dragon Ball Z - Battle of Gods",
+  "video": false,
+  "vote_average": 6.794,
+  "vote_count": 1340
+}

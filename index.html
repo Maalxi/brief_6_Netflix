@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
     <link rel="shortcut icon" href="./assets/img/netflix-icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/modal.css">
 
     <title>Netflix-clone</title>
 </head>
@@ -30,53 +31,42 @@
             <li><img src="./assets/img/sino.png" class="icons"></li>
             <li><img src="./assets/img/perfil01.png" class="icons"></li>
         </ul>
-
     </header>
-
     <main>
         <div class="container_header">
             <div class="movie-main">
                 <img src="./assets/img/dbz.png" alt="">
-                <p>La Saga freezer est le deuxième arc principal de l'anime Dragon Ball Z.
-                    L'intrigue principale est le combat tant attendu entre Goku et Freezer.</p>
+                <p>Ayant eu echo de la mort de Freezer, Beerus décide alors de partir à la recherche de son bourreau, Son Goku, dans l'espoir de tomber sur le fameux guerrier de la prophétie du Poisson Oracle.</p>
             </div>
-
             <div class="buttons">
-                <button class="btn play">
-                    <i class="fas fa-play"></i>
+                <button class="btn play" id="modal-button-play">
+                    <i class="fas fa-info-circle"></i>
                     Participer
-                </button>
-
-                <button class="btn info">
+                  </button>
+                <button class="btn info" id="modal-button-info">
                     <i class="fas fa-info-circle"></i>
                     Plus d'information
-                </button>
+                  </button>
             </div>
         </div>
     </main>
     <section class="section">
         <div class="container">
             <h2>Les plus populaires</h2>
-            <div id="carousel-demo" class="carousel is-clipped popular">
+            <div id="carousel-demo" class="carousel is-fullwidth popular">
             </div>
         </div>
         <div class="container">
             <h2>Serie</h2>
-            <div id="carousel-demo" class="carousel is-clipped serie">
+            <div id="carousel-demo" class="carousel is-fullwidth serie">
+            </div>
+        </div>
+        <div class="container">
+            <h2>Les mieux notés</h2>
+            <div id="carousel-demo" class="carousel is-fullwidth top_rated">
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
     <footer>
         <div class="container-footer">
             <div class="midias">
@@ -84,9 +74,7 @@
                 <img src="./assets/img/instagram.png" alt="">
                 <img src="./assets/img/twitter.png" alt="">
                 <img src="./assets/img/youtube.png" alt="">
-
             </div>
-
             <ul class="list">
                 <li>Langue et sous-titres</li>
                 <li>Audiodescription</li>
@@ -98,9 +86,6 @@
             </ul>
         </div>
     </footer>
-
-
-
     <script src="/js/style.js" type="module"></script>
     <script src="/js/carousel.js" type="module"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>

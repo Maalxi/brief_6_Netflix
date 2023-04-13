@@ -131,20 +131,6 @@ header img {
   margin-right: 8px;
 }
 
-.carousel-movies {
-  padding: 30px;
-}
-
-.container-movies {
-  height: 50%;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.container-movies h2 {
-  margin-bottom: 10px;
-}
-
 .box-movie {
   height: 150px;
   width: 150px;
@@ -259,10 +245,6 @@ footer {
   .btn {
     padding: 15px 15px;
     margin-bottom: 20px;
-  }
-
-  .container-movies h2 {
-    font-size: 18px;
   }
 
   .container-footer {
@@ -388,6 +370,11 @@ nav input:checked + ul {
   }
 }
 
-.slider-navigation-next, .slider-navigation-previous {
-  color: black
+.slider-navigation-next,
+.slider-navigation-previous {
+  color: black;
+}
+
+.carousel-item {
+padding-right: 10px;
 }

@@ -22,6 +22,18 @@ const img = document.createElement("img");
 // Récupérer l'élément input et le bouton de recherche
 const input = document.querySelector(".search");
 
+const SectionAccueil = document.querySelector(".accueil");
+const SectionSearch = document.querySelector(".recherche");
+
+const incrementButton = document.querySelector(".increment");
+const decrementButton = document.querySelector(".decrement");
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    hideModal();
+  }
+});
+
 function showModal(event) {
   const title = event.target.getAttribute("data-title");
   const description = event.target.getAttribute("data-description");
@@ -76,30 +88,94 @@ function showModal(event) {
 function hideModal() {
   const modal = document.querySelector(".modal");
   modal.remove();
+  document.removeEventListener("keydown", handleKeyDown);
 }
 
-// Ajouter un événement "keydown" sur l'input
-input.addEventListener("keydown", (event) => {
+function handleSearch(event) {
   // Vérifier si la touche appuyée est la touche Entrée
   if (event.keyCode === 13) {
+    SectionSearch.classList.remove("hide");
+    SectionAccueil.classList.add("hide");
+
     // Empêcher le formulaire de se soumettre
-    event.preventDefault();
+    // event.preventDefault();
 
     // Récupérer la valeur entrée par l'utilisateur
-    const query = input.value;
+    let query = input.value;
 
-    // Créer la requête API avec la valeur de recherche
-    const url = `${base_url}search/multi?${api_key}&language=fr-FR&query=${query}&page=1&include_adult=false`;
+    let page = 1;
 
-    // Envoyer la requête API avec fetch()
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        // Afficher les résultats dans la console
-        console.log(data.results);
-      });
+    // Effectuer la recherche
+    performSearch(query, page);
+
+    // Gérer les événements pour les boutons d'incrément et de décrément
+    document.querySelector(".incremente").addEventListener("click", () => {
+      if (page < 19) {
+        page++;
+        updatePage(query, page);
+      }
+    });
+
+    document.querySelector(".decrement").addEventListener("click", () => {
+      if (page > 1) {
+        page--;
+        updatePage(query, page);
+      }
+    });
   }
-});
+}
+
+function performSearch(query, page) {
+  // Créer la requête API avec la valeur de recherche
+  let url = `${base_url}search/multi?${api_key}&language=fr-FR&query=${query}&page=${page}&include_adult=false`;
+
+  // Envoyer la requête API avec fetch()
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      displayResults(data.results);
+    });
+}
+
+function updatePage(query, page) {
+  // Mettre à jour l'URL de la recherche avec la nouvelle page
+  let url = `${base_url}search/multi?${api_key}&language=fr-FR&query=${query}&page=${page}&include_adult=false`;
+
+  // Envoyer la requête API avec fetch()
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      displayResults(data.results);
+    });
+}
+
+function displayResults(results) {
+  const container = document.querySelector(".container-search-image");
+
+  // Supprimer les résultats précédents
+  container.innerHTML = "";
+
+  // Ajouter les nouveaux résultats
+  for (let i = 0; i < results.length; i++) {
+    if (results[i].poster_path && results[i].overview && results[i].title) {
+      const imagePath = base_image + results[i].poster_path;
+      const img = document.createElement("img");
+
+      img.classList.add("style-image-search");
+      img.setAttribute("src", imagePath);
+      img.setAttribute("data-image", imagePath);
+      img.setAttribute("data-title", results[i].title);
+      img.setAttribute("data-description", results[i].overview);
+      img.addEventListener("click", showModal);
+
+      container.appendChild(img);
+    }
+  }
+}
+
+// Écouter l'événement de saisie pour la recherche
+input.addEventListener("keydown", handleSearch);
+
 
 async function popular() {
   try {
@@ -109,7 +185,7 @@ async function popular() {
     const popular = data.results;
 
     for (let i = 0; i < popular.length; i++) {
-      if (popular[i].poster_path && popular[i].overview) {
+      if (popular[i].poster_path && popular[i].overview && popular[i].title) {
         const img = document.createElement("img");
         const imagePath = base_image + popular[i].poster_path;
         img.classList.add("carousel-item");
@@ -121,8 +197,6 @@ async function popular() {
         document.querySelector(".popular").appendChild(img);
       }
     }
-    showModal();
-    hideModal();
     document.querySelector(".popular").appendChild(img);
   } catch (error) {
     // console.log(error);
@@ -136,24 +210,22 @@ async function seerie() {
     const response = await fetch(serie);
     const data = await response.json();
 
-    const popular = data.results;
+    const serie = data.results;
 
     // Ajoute un événement de clic à l'image
-    for (let i = 0; i < popular.length; i++) {
-      if (popular[i].poster_path && popular[i].overview) {
+    for (let i = 0; i < serie.length; i++) {
+      if (serie[i].poster_path && serie[i].overview && serie[i].title) {
         const img = document.createElement("img");
-        const imagePath = base_image + popular[i].poster_path;
+        const imagePath = base_image + serie[i].poster_path;
         img.classList.add("carousel-item");
         img.setAttribute("src", imagePath);
-        img.setAttribute("data-title", popular[i].name);
-        img.setAttribute("data-description", popular[i].overview);
+        img.setAttribute("data-title", serie[i].name);
+        img.setAttribute("data-description", serie[i].overview);
         img.setAttribute("data-image", imagePath);
         img.addEventListener("click", showModal);
         document.querySelector(".serie").appendChild(img);
       }
     }
-    showModal();
-    hideModal();
     document.querySelector(".serie").appendChild(img);
   } catch (error) {
     // console.log(error);
@@ -167,23 +239,25 @@ async function toop_rated() {
     const response = await fetch(top_rated);
     const data = await response.json();
 
-    const popular = data.results;
+    const toop_rated = data.results;
 
-    for (let i = 0; i < popular.length; i++) {
-      if (popular[i].poster_path && popular[i].overview) {
+    for (let i = 0; i < toop_rated.length; i++) {
+      if (
+        toop_rated[i].poster_path &&
+        toop_rated[i].overview &&
+        toop_rated[i].title
+      ) {
         const img = document.createElement("img");
-        const imagePath = base_image + popular[i].poster_path;
+        const imagePath = base_image + toop_rated[i].poster_path;
         img.classList.add("carousel-item");
         img.setAttribute("src", imagePath);
-        img.setAttribute("data-title", popular[i].title);
-        img.setAttribute("data-description", popular[i].overview);
+        img.setAttribute("data-title", toop_rated[i].title);
+        img.setAttribute("data-description", toop_rated[i].overview);
         img.setAttribute("data-image", imagePath);
         img.addEventListener("click", showModal);
         document.querySelector(".top_rated").appendChild(img);
       }
     }
-    showModal();
-    hideModal();
     document.querySelector(".top_rated").appendChild(img);
   } catch (error) {
     // console.log(error);
@@ -197,7 +271,6 @@ const modalButton = document.querySelector("#modal-button-info");
 
 // Ajouter un écouteur d'événement "click" sur le bouton info
 modalButton.addEventListener("click", () => {
-
   // Créer le contenu du modal
   showModal(event);
 });

@@ -10,82 +10,101 @@
     <link rel="shortcut icon" href="./assets/img/netflix-icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/modal.css">
+    
 
     <title>Netflix-clone</title>
 </head>
 
 <body>
-    <header>
-        <img src="./assets/img/logo.png">
-        <nav>
-            <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-            <ul id="menu">
-                <li><a href="#!">Séries</a></li>
-                <li><a href="#!">Film</a></li>
-                <li><a href="#!">Ma liste</a></li>
-                <li><a href="#!">Regarder à nouveau</a></li>
+    <section class="accueil">
+        <header>
+            <img src="./assets/img/logo.png">
+            <nav>
+                <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false"
+                    aria-controls="menu">
+                <ul id="menu">
+                    <li><a href="#!">Séries</a></li>
+                    <li><a href="#!">Film</a></li>
+                    <li><a href="#!">Ma liste</a></li>
+                    <li><a href="#!">Regarder à nouveau</a></li>
+                </ul>
+            </nav>
+            <ul class="menu-icons">
+                <input type="text" name="text" class="search" placeholder="Recherchez ici !" />
+                <li><img src="./assets/img/sino.png" class="icons"></li>
+                <li><img src="./assets/img/perfil01.png" class="icons"></li>
             </ul>
-        </nav>
-        <ul class="menu-icons">
-            <input type="text" name="text" class="search" placeholder="Recherchez ici !" />
-            <li><img src="./assets/img/sino.png" class="icons"></li>
-            <li><img src="./assets/img/perfil01.png" class="icons"></li>
-        </ul>
-    </header>
-    <main>
-        <div class="container_header">
-            <div class="movie-main">
-                <img src="./assets/img/dbz.png" alt="">
-                <p>Ayant eu echo de la mort de Freezer, Beerus décide alors de partir à la recherche de son bourreau, Son Goku, dans l'espoir de tomber sur le fameux guerrier de la prophétie du Poisson Oracle.</p>
+        </header>
+        <main>
+            <div class="container_header">
+                <div class="movie-main">
+                    <img src="./assets/img/dbz.png" alt="">
+                    <p>Ayant eu echo de la mort de Freezer, Beerus décide alors de partir à la recherche de son
+                        bourreau, Son Goku, dans l'espoir de tomber sur le fameux guerrier de la prophétie du Poisson
+                        Oracle.</p>
+                </div>
+                <div class="buttons">
+                    <button class="btn play" id="modal-button-play">
+                        <i class="fas fa-info-circle"></i>
+                        Participer
+                    </button>
+                    <button class="btn info" id="modal-button-info">
+                        <i class="fas fa-info-circle"></i>
+                        Plus d'information
+                    </button>
+                </div>
             </div>
-            <div class="buttons">
-                <button class="btn play" id="modal-button-play">
-                    <i class="fas fa-info-circle"></i>
-                    Participer
-                  </button>
-                <button class="btn info" id="modal-button-info">
-                    <i class="fas fa-info-circle"></i>
-                    Plus d'information
-                  </button>
+        </main>
+        <section class="section">
+            <div class="container">
+                <h2>Les plus populaires</h2>
+                <div id="carousel-demo" class="carousel is-fullwidth popular">
+                </div>
             </div>
-        </div>
-    </main>
-    <section class="section">
-        <div class="container">
-            <h2>Les plus populaires</h2>
-            <div id="carousel-demo" class="carousel is-fullwidth popular">
+            <div class="container">
+                <h2>Serie</h2>
+                <div id="carousel-demo" class="carousel is-fullwidth serie">
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <h2>Serie</h2>
-            <div id="carousel-demo" class="carousel is-fullwidth serie">
+            <div class="container">
+                <h2>Les mieux notés</h2>
+                <div id="carousel-demo" class="carousel is-fullwidth top_rated">
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <h2>Les mieux notés</h2>
-            <div id="carousel-demo" class="carousel is-fullwidth top_rated">
+        </section>
+        <footer>
+            <div class="container-footer">
+                <div class="midias">
+                    <img src="./assets/img/fb.png" alt="">
+                    <img src="./assets/img/instagram.png" alt="">
+                    <img src="./assets/img/twitter.png" alt="">
+                    <img src="./assets/img/youtube.png" alt="">
+                </div>
+                <ul class="list">
+                    <li>Langue et sous-titres</li>
+                    <li>Audiodescription</li>
+                    <li>Conditions d'utilisation</li>
+                    <li>Confidentialité</li>
+                    <li>Mentions légales</li>
+                    <li>Préférences relatives aux cookies</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+    <section class="hide recherche">
+        <div class="container-search">
+            <div class="container-search-image">
+            </div>
+            <div class="container-pagination">
+                <button class="decrement"><</button>
+                <button class="incremente">></button>
+            </div>
+            <div>
+                <button class="btn-retour" onclick="location.reload()">Retour</button>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container-footer">
-            <div class="midias">
-                <img src="./assets/img/fb.png" alt="">
-                <img src="./assets/img/instagram.png" alt="">
-                <img src="./assets/img/twitter.png" alt="">
-                <img src="./assets/img/youtube.png" alt="">
-            </div>
-            <ul class="list">
-                <li>Langue et sous-titres</li>
-                <li>Audiodescription</li>
-                <li>Conditions d'utilisation</li>
-                <li>Confidentialité</li>
-                <li>Mentions légales</li>
-                <li>Préférences relatives aux cookies</li>
-                <li>Contact</li>
-            </ul>
-        </div>
-    </footer>
     <script src="/js/style.js" type="module"></script>
     <script src="/js/carousel.js" type="module"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>

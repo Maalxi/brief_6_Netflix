@@ -30,3 +30,15 @@
   border-radius: 3%;
   width: 80%;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-item {
+  width: calc((100% - 40px) / 5);
+  height: auto;
+  object-fit: cover;
+}
